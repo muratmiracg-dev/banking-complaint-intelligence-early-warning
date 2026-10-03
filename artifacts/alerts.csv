@@ -1,0 +1,5 @@
+week,product,issue,observed,expected,upper,p,score,lift,cusum,q,monitoring_period,alert,shift_watch,id,severity
+2024-08-12,Credit card,Incorrect information on your report,23,6.833,17.0,0.0006112547495632264,4.559,3.366,5.377,0.01467,True,True,False,EW-001,Review
+2024-11-11,Checking or savings account,Problem caused by your funds being low,12,3.167,9.0,0.001059068859969688,4.361,3.789,4.43,0.025418,True,True,False,EW-002,Review
+2024-11-04,Credit card,Closing your account,19,6.5,15.0,0.0006828512690076579,4.222,2.923,4.716,0.016388,True,True,False,EW-003,Review
+2024-08-19,Credit card,Getting a credit card,28,14.083,24.0,0.001155359024916431,3.563,1.988,3.063,0.027729,True,True,False,EW-004,Review
