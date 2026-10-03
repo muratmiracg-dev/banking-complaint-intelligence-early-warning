@@ -216,3 +216,16 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Local source records and intermediate models are never published.
+data/raw/
+data/processed/
+artifacts/local/
+*.sqlite
+*.sqlite3
+.env
+.env.*
+!.env.example
+node_modules/
+playwright-report/
+test-results/

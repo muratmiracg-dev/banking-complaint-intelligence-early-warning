@@ -1,0 +1,42 @@
+{
+  "retrieved_at": "2026-10-01T12:31:55.251529+00:00",
+  "source": "CFPB official API + official FOIA narrative archive",
+  "archive_page": "https://www.consumerfinance.gov/foia-requests/foia-electronic-reading-room/cfpb-consumer-complaint-database-narratives-archive/",
+  "sources": [
+    {
+      "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/?format=csv&date_received_min=2024-01-01&date_received_max=2024-12-30&state=NY&product=Checking+or+savings+account&product=Credit+card&product=Money+transfer%2C+virtual+currency%2C+or+money+service",
+      "sha256": "8c828413e6f1aa49b759e9bf44fc1e63a65fad29319e845ba2e36f0223a58217"
+    },
+    {
+      "url": "https://files.consumerfinance.gov/f/documents/CCDB_Export_5_September_2023_through_March_2024.zip",
+      "sha256": "993747363e52239e4762b804662d7f604f976a139de4f729f613329d3d8c7206"
+    },
+    {
+      "url": "https://files.consumerfinance.gov/f/documents/CCDB_Export_6_April_2024_through_July_2024.zip",
+      "sha256": "c8a6fb0d98287958e2c19b47e1a4211c4e43225d27123a3ca08d730a2b4ae0a5"
+    },
+    {
+      "url": "https://files.consumerfinance.gov/f/documents/CCDB_Export_7_August_2024_through_October_2024.zip",
+      "sha256": "f053000c342bfd08bc6f8f382290f623e34b166cb56760c0726ed15e296a6d74"
+    },
+    {
+      "url": "https://files.consumerfinance.gov/f/documents/CCDB_Export_8_November_2024_through_December_2024.zip",
+      "sha256": "24b3326a954c0edeff33318b157d12eef5a59547f6f274f9236f1ceaba988a74"
+    }
+  ],
+  "cohort_sha256": "70a62a002334f409ebc0f9df9662e292e6169a31ea7759bd452fe1beb9a0259a",
+  "start_inclusive": "2024-01-01",
+  "end_exclusive": "2024-12-30",
+  "state": "NY",
+  "products": [
+    "Checking or savings account",
+    "Credit card",
+    "Money transfer, virtual currency, or money service"
+  ],
+  "rows": 10750,
+  "archive_id_matches": 10750,
+  "missing_issue_imputed": 1,
+  "narratives": 5415,
+  "api_change": "September 2026: public narratives removed from live API; archived narratives joined by complaint ID.",
+  "as_of_caution": "Retrospective snapshot by received date, not a historical publication-time replay."
+}
