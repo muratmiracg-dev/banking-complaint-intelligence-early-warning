@@ -1,0 +1,12 @@
+{
+  "name": "complaint-intelligence-browser-checks",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node tests/test_inference.cjs",
+    "test:browser": "node tests/browser.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.56.1"
+  }
+}

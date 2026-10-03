@@ -1,0 +1,1001 @@
+[
+  {
+    "text": "My checking account was closed without notice and I cannot access the money I deposited last week.",
+    "expected": {
+      "product": {
+        "label": "Checking or savings account",
+        "confidence": 0.9267831373750981,
+        "review": false,
+        "top_terms": [
+          {
+            "term": "checking account",
+            "contribution": 0.4037
+          },
+          {
+            "term": "checking",
+            "contribution": 0.38
+          },
+          {
+            "term": "access",
+            "contribution": 0.2188
+          },
+          {
+            "term": "deposited",
+            "contribution": 0.2162
+          },
+          {
+            "term": "account",
+            "contribution": 0.1862
+          },
+          {
+            "term": "my checking",
+            "contribution": 0.1382
+          },
+          {
+            "term": "closed",
+            "contribution": 0.1058
+          },
+          {
+            "term": "account was",
+            "contribution": 0.0995
+          }
+        ],
+        "alternatives": [
+          {
+            "label": "Checking or savings account",
+            "score": 0.9267831373750981
+          },
+          {
+            "label": "Money transfer, virtual currency, or money service",
+            "score": 0.04548100904838857
+          },
+          {
+            "label": "Credit card",
+            "score": 0.02773585357651324
+          }
+        ]
+      },
+      "issue": {
+        "label": "Managing an account",
+        "confidence": 0.39714756848321114,
+        "review": true,
+        "top_terms": [
+          {
+            "term": "deposited",
+            "contribution": 0.377
+          },
+          {
+            "term": "access",
+            "contribution": 0.3734
+          },
+          {
+            "term": "checking account",
+            "contribution": 0.1918
+          },
+          {
+            "term": "checking",
+            "contribution": 0.1277
+          },
+          {
+            "term": "my checking",
+            "contribution": 0.1267
+          },
+          {
+            "term": "money",
+            "contribution": 0.1253
+          },
+          {
+            "term": "account",
+            "contribution": 0.1094
+          },
+          {
+            "term": "money deposited",
+            "contribution": 0.0771
+          }
+        ],
+        "alternatives": [
+          {
+            "label": "Managing an account",
+            "score": 0.39714756848321114
+          },
+          {
+            "label": "Closing an account",
+            "score": 0.272760092641327
+          },
+          {
+            "label": "Other issue",
+            "score": 0.10715873582207484
+          }
+        ]
+      }
+    }
+  },
+  {
+    "text": "The credit card company charged me interest after I paid the full balance before the due date.",
+    "expected": {
+      "product": {
+        "label": "Credit card",
+        "confidence": 0.9958582042973746,
+        "review": false,
+        "top_terms": [
+          {
+            "term": "credit",
+            "contribution": 0.5506
+          },
+          {
+            "term": "credit card",
+            "contribution": 0.4768
+          },
+          {
+            "term": "card",
+            "contribution": 0.4611
+          },
+          {
+            "term": "interest",
+            "contribution": 0.262
+          },
+          {
+            "term": "the credit",
+            "contribution": 0.252
+          },
+          {
+            "term": "card company",
+            "contribution": 0.1954
+          },
+          {
+            "term": "full",
+            "contribution": 0.1944
+          },
+          {
+            "term": "due date",
+            "contribution": 0.1594
+          }
+        ],
+        "alternatives": [
+          {
+            "label": "Credit card",
+            "score": 0.9958582042973746
+          },
+          {
+            "label": "Checking or savings account",
+            "score": 0.0025532913341837758
+          },
+          {
+            "label": "Money transfer, virtual currency, or money service",
+            "score": 0.001588504368441648
+          }
+        ]
+      },
+      "issue": {
+        "label": "Fees or interest",
+        "confidence": 0.5231229208180425,
+        "review": true,
+        "top_terms": [
+          {
+            "term": "interest",
+            "contribution": 0.9151
+          },
+          {
+            "term": "charged",
+            "contribution": 0.3863
+          },
+          {
+            "term": "due date",
+            "contribution": 0.3219
+          },
+          {
+            "term": "charged me",
+            "contribution": 0.2623
+          },
+          {
+            "term": "the due",
+            "contribution": 0.1814
+          },
+          {
+            "term": "full",
+            "contribution": 0.1796
+          },
+          {
+            "term": "due",
+            "contribution": 0.152
+          },
+          {
+            "term": "date",
+            "contribution": 0.1407
+          }
+        ],
+        "alternatives": [
+          {
+            "label": "Fees or interest",
+            "score": 0.5231229208180425
+          },
+          {
+            "label": "Other issue",
+            "score": 0.22321716379781661
+          },
+          {
+            "label": "Problem with a purchase shown on your statement",
+            "score": 0.109245895909486
+          }
+        ]
+      }
+    }
+  },
+  {
+    "text": "I sent a wire transfer but the recipient never received the money and support cannot locate the transaction.",
+    "expected": {
+      "product": {
+        "label": "Money transfer, virtual currency, or money service",
+        "confidence": 0.9217139814773793,
+        "review": false,
+        "top_terms": [
+          {
+            "term": "wire",
+            "contribution": 0.4815
+          },
+          {
+            "term": "transfer",
+            "contribution": 0.3549
+          },
+          {
+            "term": "the money",
+            "contribution": 0.313
+          },
+          {
+            "term": "money",
+            "contribution": 0.3083
+          },
+          {
+            "term": "wire transfer",
+            "contribution": 0.2825
+          },
+          {
+            "term": "support",
+            "contribution": 0.1989
+          },
+          {
+            "term": "the transaction",
+            "contribution": 0.1821
+          },
+          {
+            "term": "recipient",
+            "contribution": 0.1553
+          }
+        ],
+        "alternatives": [
+          {
+            "label": "Money transfer, virtual currency, or money service",
+            "score": 0.9217139814773793
+          },
+          {
+            "label": "Checking or savings account",
+            "score": 0.04762130480437951
+          },
+          {
+            "label": "Credit card",
+            "score": 0.03066471371824135
+          }
+        ]
+      },
+      "issue": {
+        "label": "Other issue",
+        "confidence": 0.6099991098213053,
+        "review": false,
+        "top_terms": [
+          {
+            "term": "transfer",
+            "contribution": 0.2711
+          },
+          {
+            "term": "wire transfer",
+            "contribution": 0.2388
+          },
+          {
+            "term": "wire",
+            "contribution": 0.2223
+          },
+          {
+            "term": "the money",
+            "contribution": 0.2033
+          },
+          {
+            "term": "money",
+            "contribution": 0.1368
+          },
+          {
+            "term": "support",
+            "contribution": 0.0799
+          },
+          {
+            "term": "transfer but",
+            "contribution": 0.0667
+          },
+          {
+            "term": "recipient",
+            "contribution": 0.0631
+          }
+        ],
+        "alternatives": [
+          {
+            "label": "Other issue",
+            "score": 0.6099991098213053
+          },
+          {
+            "label": "Fraud or scam",
+            "score": 0.16223455856584557
+          },
+          {
+            "label": "Managing an account",
+            "score": 0.0854445275211828
+          }
+        ]
+      }
+    }
+  },
+  {
+    "text": "My credit card was charged twice for the same purchase and the merchant has refused to refund me.",
+    "expected": {
+      "product": {
+        "label": "Credit card",
+        "confidence": 0.9783026337255767,
+        "review": false,
+        "top_terms": [
+          {
+            "term": "credit",
+            "contribution": 0.4968
+          },
+          {
+            "term": "credit card",
+            "contribution": 0.4302
+          },
+          {
+            "term": "card",
+            "contribution": 0.4161
+          },
+          {
+            "term": "my credit",
+            "contribution": 0.3705
+          },
+          {
+            "term": "merchant",
+            "contribution": 0.1954
+          },
+          {
+            "term": "the merchant",
+            "contribution": 0.1846
+          },
+          {
+            "term": "charged",
+            "contribution": 0.1154
+          },
+          {
+            "term": "purchase",
+            "contribution": 0.1021
+          }
+        ],
+        "alternatives": [
+          {
+            "label": "Credit card",
+            "score": 0.9783026337255767
+          },
+          {
+            "label": "Checking or savings account",
+            "score": 0.017077820256318137
+          },
+          {
+            "label": "Money transfer, virtual currency, or money service",
+            "score": 0.004619546018105014
+          }
+        ]
+      },
+      "issue": {
+        "label": "Problem with a purchase shown on your statement",
+        "confidence": 0.8127174441123144,
+        "review": false,
+        "top_terms": [
+          {
+            "term": "merchant",
+            "contribution": 0.5595
+          },
+          {
+            "term": "the merchant",
+            "contribution": 0.4677
+          },
+          {
+            "term": "refund",
+            "contribution": 0.3028
+          },
+          {
+            "term": "purchase",
+            "contribution": 0.3005
+          },
+          {
+            "term": "credit card",
+            "contribution": 0.2282
+          },
+          {
+            "term": "card",
+            "contribution": 0.1866
+          },
+          {
+            "term": "card was",
+            "contribution": 0.1658
+          },
+          {
+            "term": "credit",
+            "contribution": 0.1489
+          }
+        ],
+        "alternatives": [
+          {
+            "label": "Problem with a purchase shown on your statement",
+            "score": 0.8127174441123144
+          },
+          {
+            "label": "Other issue",
+            "score": 0.05522708336990023
+          },
+          {
+            "label": "Getting a credit card",
+            "score": 0.026048647468923707
+          }
+        ]
+      }
+    }
+  },
+  {
+    "text": "I cannot access the online banking account after resetting my password and contacting the customer support team.",
+    "expected": {
+      "product": {
+        "label": "Checking or savings account",
+        "confidence": 0.5740906387218667,
+        "review": false,
+        "top_terms": [
+          {
+            "term": "access",
+            "contribution": 0.1896
+          },
+          {
+            "term": "banking",
+            "contribution": 0.1698
+          },
+          {
+            "term": "account",
+            "contribution": 0.1613
+          },
+          {
+            "term": "account after",
+            "contribution": 0.092
+          },
+          {
+            "term": "online",
+            "contribution": 0.0703
+          },
+          {
+            "term": "my",
+            "contribution": 0.0561
+          },
+          {
+            "term": "password",
+            "contribution": 0.0303
+          },
+          {
+            "term": "the",
+            "contribution": 0.03
+          }
+        ],
+        "alternatives": [
+          {
+            "label": "Checking or savings account",
+            "score": 0.5740906387218667
+          },
+          {
+            "label": "Credit card",
+            "score": 0.2760319500128829
+          },
+          {
+            "label": "Money transfer, virtual currency, or money service",
+            "score": 0.1498774112652504
+          }
+        ]
+      },
+      "issue": {
+        "label": "Other issue",
+        "confidence": 0.34295406256679833,
+        "review": true,
+        "top_terms": [
+          {
+            "term": "support",
+            "contribution": 0.0742
+          },
+          {
+            "term": "customer support",
+            "contribution": 0.0671
+          },
+          {
+            "term": "password and",
+            "contribution": 0.0659
+          },
+          {
+            "term": "online banking",
+            "contribution": 0.0599
+          },
+          {
+            "term": "banking",
+            "contribution": 0.0539
+          },
+          {
+            "term": "password",
+            "contribution": 0.0518
+          },
+          {
+            "term": "banking account",
+            "contribution": 0.0464
+          },
+          {
+            "term": "access the",
+            "contribution": 0.0398
+          }
+        ],
+        "alternatives": [
+          {
+            "label": "Other issue",
+            "score": 0.34295406256679833
+          },
+          {
+            "label": "Managing an account",
+            "score": 0.25462591026202797
+          },
+          {
+            "label": "Closing an account",
+            "score": 0.08734657253909525
+          }
+        ]
+      }
+    }
+  },
+  {
+    "text": "The bank charged an overdraft fee even though there was enough money in my account to pay the transaction.",
+    "expected": {
+      "product": {
+        "label": "Checking or savings account",
+        "confidence": 0.8317367997718614,
+        "review": false,
+        "top_terms": [
+          {
+            "term": "overdraft",
+            "contribution": 0.3761
+          },
+          {
+            "term": "the bank",
+            "contribution": 0.283
+          },
+          {
+            "term": "bank",
+            "contribution": 0.2355
+          },
+          {
+            "term": "account",
+            "contribution": 0.1734
+          },
+          {
+            "term": "overdraft fee",
+            "contribution": 0.1588
+          },
+          {
+            "term": "my account",
+            "contribution": 0.1277
+          },
+          {
+            "term": "money",
+            "contribution": 0.0728
+          },
+          {
+            "term": "money in",
+            "contribution": 0.0604
+          }
+        ],
+        "alternatives": [
+          {
+            "label": "Checking or savings account",
+            "score": 0.8317367997718614
+          },
+          {
+            "label": "Money transfer, virtual currency, or money service",
+            "score": 0.12073352258656508
+          },
+          {
+            "label": "Credit card",
+            "score": 0.04752967764157335
+          }
+        ]
+      },
+      "issue": {
+        "label": "Other issue",
+        "confidence": 0.5548819592843983,
+        "review": true,
+        "top_terms": [
+          {
+            "term": "overdraft",
+            "contribution": 0.5094
+          },
+          {
+            "term": "enough",
+            "contribution": 0.1697
+          },
+          {
+            "term": "money",
+            "contribution": 0.1367
+          },
+          {
+            "term": "overdraft fee",
+            "contribution": 0.1299
+          },
+          {
+            "term": "money in",
+            "contribution": 0.1132
+          },
+          {
+            "term": "account to",
+            "contribution": 0.099
+          },
+          {
+            "term": "there was",
+            "contribution": 0.0608
+          },
+          {
+            "term": "charged",
+            "contribution": 0.053
+          }
+        ],
+        "alternatives": [
+          {
+            "label": "Other issue",
+            "score": 0.5548819592843983
+          },
+          {
+            "label": "Managing an account",
+            "score": 0.17973839872070047
+          },
+          {
+            "label": "Fees or interest",
+            "score": 0.07740595073231615
+          }
+        ]
+      }
+    }
+  },
+  {
+    "text": "I tried to open a savings account but the application was rejected without a clear explanation.",
+    "expected": {
+      "product": {
+        "label": "Checking or savings account",
+        "confidence": 0.6594069363572718,
+        "review": false,
+        "top_terms": [
+          {
+            "term": "savings",
+            "contribution": 0.3448
+          },
+          {
+            "term": "savings account",
+            "contribution": 0.2808
+          },
+          {
+            "term": "to open",
+            "contribution": 0.2016
+          },
+          {
+            "term": "account",
+            "contribution": 0.193
+          },
+          {
+            "term": "open",
+            "contribution": 0.0867
+          },
+          {
+            "term": "explanation",
+            "contribution": 0.0707
+          },
+          {
+            "term": "was",
+            "contribution": 0.0249
+          },
+          {
+            "term": "tried to",
+            "contribution": 0.022
+          }
+        ],
+        "alternatives": [
+          {
+            "label": "Checking or savings account",
+            "score": 0.6594069363572718
+          },
+          {
+            "label": "Credit card",
+            "score": 0.285087199101326
+          },
+          {
+            "label": "Money transfer, virtual currency, or money service",
+            "score": 0.055505864541402286
+          }
+        ]
+      },
+      "issue": {
+        "label": "Managing an account",
+        "confidence": 0.24544499792399527,
+        "review": true,
+        "top_terms": [
+          {
+            "term": "savings account",
+            "contribution": 0.3846
+          },
+          {
+            "term": "savings",
+            "contribution": 0.369
+          },
+          {
+            "term": "explanation",
+            "contribution": 0.1498
+          },
+          {
+            "term": "rejected",
+            "contribution": 0.1177
+          },
+          {
+            "term": "account",
+            "contribution": 0.1134
+          },
+          {
+            "term": "was rejected",
+            "contribution": 0.0996
+          },
+          {
+            "term": "but the",
+            "contribution": 0.057
+          },
+          {
+            "term": "the",
+            "contribution": 0.0313
+          }
+        ],
+        "alternatives": [
+          {
+            "label": "Managing an account",
+            "score": 0.24544499792399527
+          },
+          {
+            "label": "Getting a credit card",
+            "score": 0.22494435986137248
+          },
+          {
+            "label": "Opening an account",
+            "score": 0.12921826895825866
+          }
+        ]
+      }
+    }
+  },
+  {
+    "text": "I received a credit card statement for an account that I never opened and I suspect identity theft.",
+    "expected": {
+      "product": {
+        "label": "Credit card",
+        "confidence": 0.9079547459452719,
+        "review": false,
+        "top_terms": [
+          {
+            "term": "credit",
+            "contribution": 0.5147
+          },
+          {
+            "term": "credit card",
+            "contribution": 0.4458
+          },
+          {
+            "term": "card",
+            "contribution": 0.4311
+          },
+          {
+            "term": "statement",
+            "contribution": 0.2607
+          },
+          {
+            "term": "never",
+            "contribution": 0.0815
+          },
+          {
+            "term": "identity theft",
+            "contribution": 0.0694
+          },
+          {
+            "term": "identity",
+            "contribution": 0.0503
+          },
+          {
+            "term": "card statement",
+            "contribution": 0.0487
+          }
+        ],
+        "alternatives": [
+          {
+            "label": "Credit card",
+            "score": 0.9079547459452719
+          },
+          {
+            "label": "Checking or savings account",
+            "score": 0.06863883605507518
+          },
+          {
+            "label": "Money transfer, virtual currency, or money service",
+            "score": 0.02340641799965294
+          }
+        ]
+      },
+      "issue": {
+        "label": "Getting a credit card",
+        "confidence": 0.27256030456240277,
+        "review": true,
+        "top_terms": [
+          {
+            "term": "credit",
+            "contribution": 0.3354
+          },
+          {
+            "term": "credit card",
+            "contribution": 0.2709
+          },
+          {
+            "term": "received credit",
+            "contribution": 0.1989
+          },
+          {
+            "term": "card",
+            "contribution": 0.1856
+          },
+          {
+            "term": "opened",
+            "contribution": 0.1759
+          },
+          {
+            "term": "received",
+            "contribution": 0.0972
+          },
+          {
+            "term": "an account",
+            "contribution": 0.0716
+          },
+          {
+            "term": "never opened",
+            "contribution": 0.0547
+          }
+        ],
+        "alternatives": [
+          {
+            "label": "Getting a credit card",
+            "score": 0.27256030456240277
+          },
+          {
+            "label": "Other issue",
+            "score": 0.2273035781947926
+          },
+          {
+            "label": "Problem with a purchase shown on your statement",
+            "score": 0.15348399487467188
+          }
+        ]
+      }
+    }
+  },
+  {
+    "text": "I emailed user@example.com and checked https://example.com about the transfer of 123456789 money from my account.",
+    "expected": {
+      "product": {
+        "label": "Money transfer, virtual currency, or money service",
+        "confidence": 0.5769659020834427,
+        "review": false,
+        "top_terms": [
+          {
+            "term": "transfer",
+            "contribution": 0.447
+          },
+          {
+            "term": "money",
+            "contribution": 0.3883
+          },
+          {
+            "term": "the transfer",
+            "contribution": 0.3217
+          },
+          {
+            "term": "from my",
+            "contribution": 0.1316
+          },
+          {
+            "term": "money from",
+            "contribution": 0.1149
+          },
+          {
+            "term": "emailed and",
+            "contribution": 0.1033
+          },
+          {
+            "term": "from",
+            "contribution": 0.0984
+          },
+          {
+            "term": "of money",
+            "contribution": 0.0594
+          }
+        ],
+        "alternatives": [
+          {
+            "label": "Money transfer, virtual currency, or money service",
+            "score": 0.5769659020834427
+          },
+          {
+            "label": "Checking or savings account",
+            "score": 0.34960397924275355
+          },
+          {
+            "label": "Credit card",
+            "score": 0.07343011867380383
+          }
+        ]
+      },
+      "issue": {
+        "label": "Other issue",
+        "confidence": 0.5353136671124226,
+        "review": true,
+        "top_terms": [
+          {
+            "term": "transfer",
+            "contribution": 0.3414
+          },
+          {
+            "term": "the transfer",
+            "contribution": 0.211
+          },
+          {
+            "term": "money",
+            "contribution": 0.1723
+          },
+          {
+            "term": "money from",
+            "contribution": 0.1616
+          },
+          {
+            "term": "emailed and",
+            "contribution": 0.1077
+          },
+          {
+            "term": "from my",
+            "contribution": 0.1059
+          },
+          {
+            "term": "emailed",
+            "contribution": 0.0671
+          },
+          {
+            "term": "of money",
+            "contribution": 0.055
+          }
+        ],
+        "alternatives": [
+          {
+            "label": "Other issue",
+            "score": 0.5353136671124226
+          },
+          {
+            "label": "Managing an account",
+            "score": 0.2501371555365578
+          },
+          {
+            "label": "Fraud or scam",
+            "score": 0.05955117294115043
+          }
+        ]
+      }
+    }
+  }
+]

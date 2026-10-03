@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A local workbench for exploring CFPB banking complaints, text models and historical early warning signals.">
+<title>Complaint Intelligence · Research Workbench</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+<script defer src="data.js"></script><script defer src="model.js"></script><script defer src="inference.js"></script><script defer src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<aside class="sidebar">
+<a class="brand" href="#overview"><span class="brandmark">ci<span>.</span></span><span>complaint<br><strong>intelligence</strong></span></a>
+<div class="nav-caption">RESEARCH WORKBENCH</div>
+<nav aria-label="Main navigation">
+<button data-view="overview" class="active"><span>◫</span> Overview</button>
+<button data-view="signals"><span>⌁</span> Early warnings <b id="alert-count"></b></button>
+<button data-view="explorer"><span>⌕</span> Complaint explorer</button>
+<button data-view="topics"><span>▦</span> Topic discovery</button>
+<button data-view="models"><span>⤴</span> Model lab</button>
+<button data-view="evidence"><span>☷</span> Data & methods</button>
+</nav>
+<div class="sidebar-bottom"><span class="status-dot"></span> Historical research snapshot<p>New York · 2024<br>CFPB official source data</p><div class="author">Murat Miraç Gedik<br><span>Statistics · Banking analytics</span></div></div>
+</aside>
+<div class="workspace">
+<header class="topbar"><span>PORTFOLIO / <strong>COMPLAINT ANALYTICS</strong></span><span class="scope">US / NY <i></i> 01 JAN — 29 DEC 2024</span></header>
+<main id="main" tabindex="-1"></main>
+<footer>Public complaint records describe consumer allegations. Signals support investigation; they do not establish misconduct.</footer>
+</div>
+<dialog id="detail"><button id="close-detail" class="close" aria-label="Close details">×</button><div id="detail-body"></div></dialog>
+<noscript>This workbench needs JavaScript. The repository also contains CSV reports and methodology notes.</noscript>
+</body>
+</html>
