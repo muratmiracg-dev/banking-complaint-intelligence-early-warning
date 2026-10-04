@@ -67,6 +67,11 @@ class MonitoringTests(unittest.TestCase):
     def test_bh_known_values(self):
         np.testing.assert_allclose(bh_adjust([.01,.04,.03,.2]),[.04,.0533333333,.0533333333,.2])
 
+    def test_bh_rejects_invalid_probability_vectors(self):
+        for values in ([0.1, float("nan")], [-0.1, 0.5], [0.5, 1.1], [[0.1], [0.2]]):
+            with self.subTest(values=values), self.assertRaises(ValueError):
+                bh_adjust(values)
+
     def test_future_counts_cannot_change_past_scores(self):
         x=np.array([5,6,4,8,4,7,6,3,6,5,7,4]*4)
         other=x.copy();other[30:]=999
@@ -95,8 +100,13 @@ class MonitoringTests(unittest.TestCase):
         self.assertTrue(all(x['expected'] is None and x['p']==1 for x in score_series([5]*12)))
 
     def test_invalid_counts_fail(self):
-        for values in [[1,-1],[1,float('nan')]]:
+        for values in [[1,-1],[1,float('nan')], [1, 1.5], [[1, 2]]]:
             with self.assertRaises(ValueError):score_series(values)
+
+    def test_invalid_monitoring_windows_fail(self):
+        for window in (True, 1, 2.5):
+            with self.subTest(window=window), self.assertRaises(ValueError):
+                score_series([1, 2, 3], window=window)
 
     def test_missing_weeks_are_zero_not_dropped(self):
         rows=[]
