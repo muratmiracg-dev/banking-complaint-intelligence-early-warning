@@ -16,6 +16,8 @@ def bh_adjust(values):
     p = np.asarray(values, dtype=float)
     if not len(p):
         return p
+    if p.ndim != 1 or not np.isfinite(p).all() or ((p < 0) | (p > 1)).any():
+        raise ValueError("P-values must be a finite one-dimensional vector in [0, 1]")
     order = np.argsort(p)
     adjusted = p[order] * len(p) / np.arange(1, len(p) + 1)
     adjusted = np.minimum.accumulate(adjusted[::-1])[::-1]
@@ -26,8 +28,15 @@ def bh_adjust(values):
 
 def score_series(values, window=WINDOW):
     values = np.asarray(values, dtype=float)
-    if np.any(values < 0) or not np.isfinite(values).all():
-        raise ValueError('Counts must be finite and nonnegative')
+    if isinstance(window, bool) or not isinstance(window, int) or window < 2:
+        raise ValueError("Window must be an integer of at least two weeks")
+    if (
+        values.ndim != 1
+        or np.any(values < 0)
+        or not np.isfinite(values).all()
+        or not np.equal(values, np.floor(values)).all()
+    ):
+        raise ValueError("Counts must be a one-dimensional vector of finite nonnegative integers")
     output = []
     cusum = 0.0
     for i, observed in enumerate(values):

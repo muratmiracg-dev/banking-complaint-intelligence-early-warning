@@ -75,3 +75,10 @@ Complaint counts have no customer/transaction exposure denominator. Do not rank 
 - [CFPB API release notes, Release 24](https://cfpb.github.io/api/ccdb/release-notes.html)
 - [Official narrative archive](https://www.consumerfinance.gov/foia-requests/foia-electronic-reading-room/cfpb-consumer-complaint-database-narratives-archive/)
 - [CFPB API specification](https://github.com/cfpb/ccdb5-api/blob/main/swagger-config.yaml)
+# Monitoring input contract
+
+Weekly observations must be a one-dimensional sequence of finite, non-negative
+integer counts and the rolling baseline must contain at least two weeks.
+Benjamini-Hochberg correction accepts only finite p-values in the closed
+interval from zero to one, preventing invalid statistical inputs from silently
+entering the early-warning ranking.
