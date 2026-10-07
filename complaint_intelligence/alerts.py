@@ -99,6 +99,10 @@ def monitor(frame):
 
 
 def simulation_benchmark(repetitions=200, family_size=12):
+    if type(repetitions) is not int or not 1 <= repetitions <= 10_000:
+        raise ValueError("Repetitions must be an integer from 1 to 10000")
+    if type(family_size) is not int or not 1 <= family_size <= 1_000:
+        raise ValueError("Family size must be an integer from 1 to 1000")
     rng = np.random.default_rng(SEED)
     false_flags = eligible = detected = 0
     delays = []

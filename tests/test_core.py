@@ -6,7 +6,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from complaint_intelligence.alerts import bh_adjust, score_series, monitor
+from complaint_intelligence.alerts import bh_adjust, score_series, monitor, simulation_benchmark
 from complaint_intelligence.data import validate_frame
 from complaint_intelligence.model import infer, split_narratives
 from complaint_intelligence.pipeline import safe_csv
@@ -20,6 +20,12 @@ def row(**kwargs):
 
 
 class SourceContractTests(unittest.TestCase):
+    def test_simulation_benchmark_rejects_invalid_dimensions(self):
+        for kwargs in ({"repetitions": 0}, {"repetitions": True},
+                       {"family_size": 0}, {"family_size": 1.5}):
+            with self.subTest(kwargs=kwargs), self.assertRaises(ValueError):
+                simulation_benchmark(**kwargs)
+
     def test_duplicate_ids_fail(self):
         with self.assertRaisesRegex(ValueError,'Duplicate'):
             validate_frame(pd.DataFrame([row(),row()]))
