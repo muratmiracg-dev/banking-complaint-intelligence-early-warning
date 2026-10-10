@@ -6,12 +6,17 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from complaint_intelligence.alerts import bh_adjust, score_series, monitor, simulation_benchmark
+from complaint_intelligence.alerts import (
+    bh_adjust,
+    monitor,
+    score_series,
+    simulation_benchmark,
+)
+from complaint_intelligence.config import PRODUCTS, ROOT
 from complaint_intelligence.data import validate_frame
-from complaint_intelligence.model import infer, split_narratives
+from complaint_intelligence.model import evaluate, infer, split_narratives
 from complaint_intelligence.pipeline import safe_csv
-from complaint_intelligence.text import clean_text, text_hash, public_excerpt
-from complaint_intelligence.config import ROOT, PRODUCTS
+from complaint_intelligence.text import clean_text, public_excerpt, text_hash
 from complaint_intelligence.validate import validate_artifacts
 
 
@@ -20,6 +25,18 @@ def row(**kwargs):
 
 
 class SourceContractTests(unittest.TestCase):
+    def test_model_evaluation_rejects_malformed_probabilities(self):
+        y = ["A", "B"]
+        pred = ["A", "B"]
+        for probabilities in (
+            [[0.8, 0.2]],
+            [[0.8, 0.3], [0.2, 0.8]],
+            [[0.8, 0.2], [float("nan"), float("nan")]],
+            [[1.1, -0.1], [0.2, 0.8]],
+        ):
+            with self.subTest(probabilities=probabilities), self.assertRaises(ValueError):
+                evaluate(y, pred, probabilities, ["A", "B"])
+
     def test_simulation_benchmark_rejects_invalid_dimensions(self):
         for kwargs in ({"repetitions": 0}, {"repetitions": True},
                        {"family_size": 0}, {"family_size": 1.5}):
