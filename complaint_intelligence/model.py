@@ -4,12 +4,18 @@ from collections import Counter
 
 import numpy as np
 from scipy.special import softmax
+from sklearn.decomposition import NMF
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, f1_score, log_loss
-from sklearn.decomposition import NMF
+from sklearn.metrics import (
+    accuracy_score,
+    classification_report,
+    confusion_matrix,
+    f1_score,
+    log_loss,
+)
 
-from .config import TRAIN_END, VALID_END, SEED
+from .config import SEED, TRAIN_END, VALID_END
 from .text import clean_text, text_hash
 
 
@@ -30,6 +36,20 @@ def split_narratives(frame):
 
 def evaluate(y, pred, probabilities, classes):
     labels = list(classes)
+    y = np.asarray(y)
+    pred = np.asarray(pred)
+    probabilities = np.asarray(probabilities, dtype=float)
+    if y.ndim != 1 or pred.ndim != 1 or len(y) == 0 or len(y) != len(pred):
+        raise ValueError('Evaluation labels and predictions must be non-empty aligned vectors')
+    if len(labels) < 2 or len(set(labels)) != len(labels):
+        raise ValueError('Evaluation classes must contain at least two unique labels')
+    if probabilities.shape != (len(y), len(labels)):
+        raise ValueError('Probability matrix must align with rows and classes')
+    if (not np.isfinite(probabilities).all() or (probabilities < 0).any()
+            or not np.allclose(probabilities.sum(axis=1), 1.0, atol=1e-7, rtol=0)):
+        raise ValueError('Probabilities must be finite, non-negative and sum to one')
+    if not set(y).issubset(labels) or not set(pred).issubset(labels):
+        raise ValueError('Labels and predictions must belong to the declared classes')
     correct = np.asarray(y) == np.asarray(pred)
     confidence = probabilities.max(axis=1)
     ece = 0.0
@@ -40,8 +60,6 @@ def evaluate(y, pred, probabilities, classes):
     truth = np.array([[int(v == c) for c in classes] for v in y])
     rng = np.random.default_rng(SEED)
     scores = []
-    y = np.asarray(y)
-    pred = np.asarray(pred)
     for _ in range(200):
         index = rng.integers(0, len(y), len(y))
         scores.append(f1_score(y[index], pred[index], labels=labels, average='macro', zero_division=0))
