@@ -13,7 +13,7 @@ The importer accepts the CFPB column names or the internal names below. A custom
 | state | State | NY |
 | narrative | Consumer complaint narrative | May be blank per record; at least one nonblank value required to build |
 | company | Company | Optional, blank if unavailable |
-| timely | Timely response? | Optional, retained as metadata only |
+| timely | Timely response? | Optional; `Yes`, `No`, or blank after trimming; retained as metadata only |
 
 Training requires at least 30 distinct, sufficiently long narratives in each chronological partition. The shipped cohort has far more than this minimum; the minimum is a validity check, not a recommended sample size.
 

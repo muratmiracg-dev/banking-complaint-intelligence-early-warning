@@ -75,6 +75,10 @@ def validate_frame(frame, require_narrative=False):
         if col not in df:
             df[col] = ''
         df[col] = df[col].fillna('').astype(str)
+    timely_values = df['timely'].str.strip()
+    if not timely_values.isin({'', 'Yes', 'No'}).all():
+        raise ValueError('Timely response values must be Yes, No, or blank')
+    df['timely'] = timely_values
     if require_narrative and not df['narrative'].str.strip().ne('').any():
         raise ValueError('No narratives: current CFPB API does not supply them; use the official archive')
     return df.sort_values(['date', 'id']).reset_index(drop=True)
