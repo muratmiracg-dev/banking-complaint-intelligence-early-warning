@@ -61,6 +61,16 @@ class SourceContractTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'cohort'):
             validate_frame(pd.DataFrame([data]))
 
+    def test_invalid_timely_response_value_fails(self):
+        data = row(timely='Unknown')
+        with self.assertRaisesRegex(ValueError, 'Yes, No, or blank'):
+            validate_frame(pd.DataFrame([data]))
+
+    def test_timely_response_is_normalized(self):
+        data = row(timely='  Yes  ')
+        validated = validate_frame(pd.DataFrame([data]))
+        self.assertEqual(validated.loc[0, 'timely'], 'Yes')
+
     def test_narratives_are_not_fabricated(self):
         with self.assertRaisesRegex(ValueError,'No narratives'):
             validate_frame(pd.DataFrame([row()]),require_narrative=True)
