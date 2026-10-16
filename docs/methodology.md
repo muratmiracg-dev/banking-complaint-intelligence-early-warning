@@ -1,5 +1,8 @@
 # How the analysis works
 
+Weekly count vectors accept only real numeric observations. Boolean and numeric-text values
+are rejected before conversion, preventing source-system type coercion from creating false
+early-warning signals.
 ## Cohort and source change
 
 The study uses three CFPB categories: checking/savings accounts, credit cards and money transfers/virtual currency/money services. It is limited to New York records received from **2024-01-01 inclusive to 2024-12-30 exclusive**, exactly 52 complete Monday–Sunday weeks. The transfer group also contains non-bank providers; the sample is not a census of banks.
