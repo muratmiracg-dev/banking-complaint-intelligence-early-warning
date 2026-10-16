@@ -133,7 +133,7 @@ class MonitoringTests(unittest.TestCase):
         self.assertTrue(all(x['expected'] is None and x['p']==1 for x in score_series([5]*12)))
 
     def test_invalid_counts_fail(self):
-        for values in [[1,-1],[1,float('nan')], [1, 1.5], [[1, 2]]]:
+        for values in [[1,-1],[1,float('nan')], [1, 1.5], [[1, 2]], [1, True], [1, "2"]]:
             with self.assertRaises(ValueError):score_series(values)
 
     def test_invalid_monitoring_windows_fail(self):
