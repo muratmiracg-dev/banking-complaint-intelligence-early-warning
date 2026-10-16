@@ -3,10 +3,13 @@
 Negative-binomial predictive tails are approximate under a rolling estimated baseline.
 Flags are investigative signals, not verified incidents or causal findings.
 """
+import numbers
+
 import numpy as np
 import pandas as pd
 from scipy.stats import nbinom, poisson
-from .config import START, END, TRAIN_END, SEED
+
+from .config import END, SEED, START, TRAIN_END
 
 WINDOW = 12
 ALPHA = 0.05
@@ -27,6 +30,12 @@ def bh_adjust(values):
 
 
 def score_series(values, window=WINDOW):
+    raw = np.asarray(values, dtype=object)
+    if raw.ndim != 1 or any(
+        isinstance(value, (bool, np.bool_)) or not isinstance(value, numbers.Real)
+        for value in raw
+    ):
+        raise ValueError("Counts must be numeric and must not be booleans")
     values = np.asarray(values, dtype=float)
     if isinstance(window, bool) or not isinstance(window, int) or window < 2:
         raise ValueError("Window must be an integer of at least two weeks")
