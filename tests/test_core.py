@@ -97,6 +97,15 @@ class SourceContractTests(unittest.TestCase):
 
 
 class MonitoringTests(unittest.TestCase):
+    def test_monitor_rejects_invalid_input_contract(self):
+        valid = pd.DataFrame([{"date": pd.Timestamp("2024-01-02"),
+                               "product": "Card", "issue": "Billing"}])
+        for invalid in (valid.drop(columns="issue"),
+                        valid.assign(date="2024-01-02"),
+                        valid.assign(product=" "), valid.assign(issue=None)):
+            with self.subTest(columns=list(invalid.columns)), self.assertRaises(ValueError):
+                monitor(invalid)
+
     def test_bh_known_values(self):
         np.testing.assert_allclose(bh_adjust([.01,.04,.03,.2]),[.04,.0533333333,.0533333333,.2])
 
