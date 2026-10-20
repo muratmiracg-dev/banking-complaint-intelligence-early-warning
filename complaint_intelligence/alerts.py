@@ -74,6 +74,15 @@ def score_series(values, window=WINDOW):
 
 
 def monitor(frame):
+    required = {"date", "product", "issue"}
+    if frame.empty or not required <= set(frame.columns):
+        raise ValueError("Monitoring input must contain date, product and issue observations")
+    if (not pd.api.types.is_datetime64_any_dtype(frame["date"])
+            or frame[list(required)].isna().any().any()):
+        raise ValueError("Monitoring dates, products and issues must be complete and normalized")
+    if (frame["product"].astype(str).str.strip().eq("").any()
+            or frame["issue"].astype(str).str.strip().eq("").any()):
+        raise ValueError("Monitoring products and issues must be non-empty")
     df = frame.copy()
     df['week'] = df['date'] - pd.to_timedelta(df['date'].dt.dayofweek, unit='D')
     weeks = pd.date_range(START, pd.Timestamp(END) - pd.Timedelta(days=7), freq='W-MON')
