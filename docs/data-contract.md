@@ -16,6 +16,8 @@ The importer accepts the CFPB column names or the internal names below. A custom
 | timely | Timely response? | Optional; `Yes`, `No`, or blank after trimming; retained as metadata only |
 
 Training requires at least 30 distinct, sufficiently long narratives in each chronological partition. The shipped cohort has far more than this minimum; the minimum is a validity check, not a recommended sample size.
+Monitoring additionally requires non-empty normalized product/issue labels and a complete datetime
+column; malformed frames fail before weekly aggregation.
 
 ## Outputs
 
