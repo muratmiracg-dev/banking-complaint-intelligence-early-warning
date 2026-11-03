@@ -22,8 +22,11 @@ def main():
         from .server import serve
         serve(args.port)
     else:
-        from .validate import validate_artifacts
-        validate_artifacts()
+        from .validate import ArtifactValidationError, validate_artifacts
+        try:
+            validate_artifacts()
+        except ArtifactValidationError as exc:
+            parser.exit(1, f'Artifact validation failed: {exc}\n')
 
 
 if __name__ == '__main__':
