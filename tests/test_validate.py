@@ -42,6 +42,31 @@ class ArtifactValidationTests(unittest.TestCase):
         with self.assertRaisesRegex(ArtifactValidationError, 'narrative leaked'):
             validate_artifacts(self.root)
 
+    def test_series_statistic_not_matching_its_counts_is_rejected(self):
+        def change(report):
+            row = next(r for r in report['series'] if r['week'] >= '2024-09-02')
+            row['p'] = row['p'] / 10
+        self.edit_report(change)
+        with self.assertRaisesRegex(ArtifactValidationError, 'statistics do not match its published counts'):
+            validate_artifacts(self.root)
+
+    def test_edited_count_that_no_longer_reconciles_is_rejected(self):
+        self.edit_report(lambda r: r['series'][40].__setitem__('observed', r['series'][40]['observed'] + 3))
+        with self.assertRaisesRegex(ArtifactValidationError, 'do not reconcile with the matrix'):
+            validate_artifacts(self.root)
+
+    def test_missing_qualifying_alert_is_rejected(self):
+        def drop_last_alert(report):
+            dropped = report['alerts'].pop()
+            report['summary']['alerts'] -= 1
+            for row in report['series']:
+                if (row['week'], row['product'], row['issue']) == (
+                        dropped['week'], dropped['product'], dropped['issue']):
+                    row['alert'] = False
+        self.edit_report(drop_last_alert)
+        with self.assertRaisesRegex(ArtifactValidationError, 'alert flag is not reproducible'):
+            validate_artifacts(self.root)
+
     def test_stale_browser_copy_is_rejected(self):
         (self.root/'web/data.js').write_text('window.REPORT = {};\n')
         with self.assertRaisesRegex(ArtifactValidationError, 'data.js stale'):
