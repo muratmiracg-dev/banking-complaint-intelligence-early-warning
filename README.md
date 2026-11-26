@@ -110,6 +110,11 @@ python -m complaint_intelligence validate
 node tests/test_inference.cjs
 ```
 
+`validate` needs no source narratives. Besides count, matrix and browser-copy
+reconciliation, it recomputes every published monitoring statistic (baseline, p-value,
+standardized score, lift, CUSUM, weekly BH q-value) and the full alert list from the
+published weekly counts, so a stale or edited alert table fails the check.
+
 The Python tests cover source validation, duplicate handling, temporal boundaries, past-only monitoring, multiplicity adjustment, CSV safety and the local API. JavaScript checks compare portable predictions with Python. The browser smoke test checks navigation, filtering, dialogs, inference and mobile width:
 
 ```bash
